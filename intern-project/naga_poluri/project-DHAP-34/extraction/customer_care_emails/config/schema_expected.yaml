@@ -1,0 +1,63 @@
+# schema_expected.yaml
+# Author: naga_poluri
+# Project: DHAP-34
+#
+# This is the schema contract for the customer_care_emails dataset.
+# The DAG reads this file during validation and will fail if the
+# incoming CSV doesn't match what's defined here.
+
+table: public.customer_care_emails
+
+primary_key:
+  - id
+
+columns:
+  - name: id
+    type: integer
+    nullable: false
+    description: unique record id
+
+  - name: email_subject
+    type: text
+    nullable: true
+    description: subject line of the email
+
+  - name: email_body
+    type: text
+    nullable: false
+    description: full body of the customer email
+
+  - name: issue_type
+    type: text
+    nullable: true
+    description: category - Billing, Technical, Shipping, Order, General
+
+  - name: sentiment_score
+    type: float
+    nullable: true
+    description: score from -1.0 (negative) to +1.0 (positive)
+
+  - name: sentiment_label
+    type: text
+    nullable: true
+    description: Positive, Neutral, or Negative
+
+  - name: resolution_status
+    type: text
+    nullable: true
+    description: Resolved, In Progress, Pending, or Closed
+
+  - name: status
+    type: text
+    nullable: true
+    description: pipeline flag - rows with 'done' are skipped during ingestion
+
+  - name: created_at
+    type: timestamp
+    nullable: true
+    description: when the record was created
+
+  - name: updated_at
+    type: timestamp
+    nullable: true
+    description: when the record was last updated

@@ -1,0 +1,6 @@
+# requirements.txt — DHAP-34 | naga_poluri
+apache-airflow==2.8.1
+psycopg2-binary==2.9.9
+pandas==2.1.4
+pyyaml==6.0.1
+sqlalchemy==1.4.51

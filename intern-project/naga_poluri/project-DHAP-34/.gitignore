@@ -1,0 +1,24 @@
+# .gitignore — DHAP-34 | naga_poluri
+
+# real env files with credentials
+.env
+*.env
+
+# python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# airflow logs
+logs/
+*.log
+
+# intermediate file created during pipeline run
+sample_data/transformed.csv
+
+# os files
+.DS_Store
+Thumbs.db
+
+# vscode
+.vscode/
